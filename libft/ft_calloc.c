@@ -1,39 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amarcele <amarcele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/05/02 21:25:03 by amarcele          #+#    #+#             */
-/*   Updated: 2020/05/08 18:47:23 by amarcele         ###   ########.fr       */
+/*   Created: 2020/05/08 18:58:02 by amarcele          #+#    #+#             */
+/*   Updated: 2020/05/08 19:01:55 by amarcele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-	int i;
-	int y;
-	int b;
+	unsigned char *mem;
 
-	i = ft_strlen(dst);
-	y = ft_strlen(src);
-	b = i + y;
-	if ((int)size >= i)
-	{
-		size = size - i;
-		while (size > 1 && *src != '\0')
-		{
-			dst[i] = *src++;
-			size--;
-			i++;
-		}
-		if (size != 0)
-			dst[i] = '\0';
-		return (b);
-	}
-	else
-		return (y + size);
+	mem = malloc(sizeof(size) * nmemb + 1);
+	if (mem == NULL)
+		return (NULL);
+	return (mem);
 }

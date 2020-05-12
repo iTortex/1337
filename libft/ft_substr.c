@@ -1,39 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amarcele <amarcele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/05/02 21:25:03 by amarcele          #+#    #+#             */
-/*   Updated: 2020/05/08 18:47:23 by amarcele         ###   ########.fr       */
+/*   Created: 2020/05/10 17:10:43 by amarcele          #+#    #+#             */
+/*   Updated: 2020/05/11 19:42:15 by amarcele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+char		*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	int i;
-	int y;
-	int b;
+	int		i;
+	char	*str;
 
-	i = ft_strlen(dst);
-	y = ft_strlen(src);
-	b = i + y;
-	if ((int)size >= i)
+	i = 0;
+	str = ft_calloc(len + 1, sizeof(char));
+	if (str == NULL)
+		return (NULL);
+	while (len--)
 	{
-		size = size - i;
-		while (size > 1 && *src != '\0')
-		{
-			dst[i] = *src++;
-			size--;
-			i++;
-		}
-		if (size != 0)
-			dst[i] = '\0';
-		return (b);
+		str[i] = s[start];
+		start++;
+		i++;
 	}
-	else
-		return (y + size);
+	return (str);
 }

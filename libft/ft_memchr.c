@@ -6,7 +6,7 @@
 /*   By: amarcele <amarcele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/01 20:57:21 by amarcele          #+#    #+#             */
-/*   Updated: 2020/05/02 15:29:33 by amarcele         ###   ########.fr       */
+/*   Updated: 2020/05/05 16:47:13 by amarcele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,16 @@
 
 void	*ft_memchr(const void *arr, int c, size_t n)
 {
-	int i;
+	unsigned char *a;
+	unsigned char co;
 
-	i = 0;
-	while (n != 0)
+	a = (unsigned char *)arr;
+	co = (unsigned char)c;
+	while (n--)
 	{
-		i++;
-		n--;
+		if (*a == co)
+			return (a);
+		a++;
 	}
-	if (((unsigned char *)arr)[i] == c)
-		return (&((unsigned char *)arr)[i]);
-	else
-		return (NULL);
+	return (NULL);
 }

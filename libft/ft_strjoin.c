@@ -1,39 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amarcele <amarcele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/05/02 21:25:03 by amarcele          #+#    #+#             */
-/*   Updated: 2020/05/08 18:47:23 by amarcele         ###   ########.fr       */
+/*   Created: 2020/05/10 17:54:19 by amarcele          #+#    #+#             */
+/*   Updated: 2020/05/11 20:02:04 by amarcele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+char		*ft_strjoin(char const *s1, char const *s2)
 {
-	int i;
-	int y;
-	int b;
+	int		i;
+	char	*str;
 
-	i = ft_strlen(dst);
-	y = ft_strlen(src);
-	b = i + y;
-	if ((int)size >= i)
-	{
-		size = size - i;
-		while (size > 1 && *src != '\0')
-		{
-			dst[i] = *src++;
-			size--;
-			i++;
-		}
-		if (size != 0)
-			dst[i] = '\0';
-		return (b);
-	}
-	else
-		return (y + size);
+	i = ft_strlen(s1) + ft_strlen(s2);
+	str = ft_calloc(i, sizeof(char));
+	if (str == NULL)
+		return (NULL);
+	ft_strlcat(str, s1, i + 1);
+	ft_strlcat(str, s2, i + 1);
+	return (str);
 }

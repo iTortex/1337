@@ -1,39 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amarcele <amarcele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/05/02 21:25:03 by amarcele          #+#    #+#             */
-/*   Updated: 2020/05/08 18:47:23 by amarcele         ###   ########.fr       */
+/*   Created: 2020/05/08 17:17:50 by amarcele          #+#    #+#             */
+/*   Updated: 2020/05/08 17:23:02 by amarcele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+int	ft_isprint(int num)
 {
-	int i;
-	int y;
-	int b;
-
-	i = ft_strlen(dst);
-	y = ft_strlen(src);
-	b = i + y;
-	if ((int)size >= i)
-	{
-		size = size - i;
-		while (size > 1 && *src != '\0')
-		{
-			dst[i] = *src++;
-			size--;
-			i++;
-		}
-		if (size != 0)
-			dst[i] = '\0';
-		return (b);
-	}
-	else
-		return (y + size);
+	return (num > 31 && num < 127);
 }

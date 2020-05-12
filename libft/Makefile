@@ -1,16 +1,16 @@
 SRC = *.c
 
-all: libft
+NAME = libft.a
+all: $(NAME)
 
-libft:
-	gcc -c $(SRC)
+$(NAME):
+	gcc -c -Wall -Wextra -Werror $(SRC)
 	ar rc libft.a *.o
 	ranlib libft.a
 clean:
 	/bin/rm -f *.o
 
-fclean:
-	/bin/rm -f *.o
+fclean: clean
 	/bin/rm -f libft.a
 
 re: fclean all

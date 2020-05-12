@@ -1,39 +1,54 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amarcele <amarcele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/05/02 21:25:03 by amarcele          #+#    #+#             */
-/*   Updated: 2020/05/08 18:47:23 by amarcele         ###   ########.fr       */
+/*   Created: 2020/05/11 16:20:04 by amarcele          #+#    #+#             */
+/*   Updated: 2020/05/11 20:18:11 by amarcele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+int	sch(int ch)
 {
-	int i;
 	int y;
-	int b;
 
-	i = ft_strlen(dst);
-	y = ft_strlen(src);
-	b = i + y;
-	if ((int)size >= i)
+	y = 0;
+	while (ch)
 	{
-		size = size - i;
-		while (size > 1 && *src != '\0')
-		{
-			dst[i] = *src++;
-			size--;
-			i++;
-		}
-		if (size != 0)
-			dst[i] = '\0';
-		return (b);
+		y++;
+		ch = ch / 10;
 	}
-	else
-		return (y + size);
+	return (y);
+}
+
+char				*ft_itoa(int num)
+{
+	int				i;
+	char			*str;
+	int				x;
+	unsigned int	z;
+
+	x = 0;
+	z = num;
+	if ((i = num) <= 0)
+	{
+		x++;
+		z = -num;
+	}
+	x = x + sch(i);
+	str = ft_calloc(x + 1, sizeof(char));
+	if (z == 0)
+		str[0] = '0';
+	while (z)
+	{
+		str[--x] = (z % 10) + '0';
+		z = z / 10;
+	}
+	if (num < 0)
+		str[--x] = '-';
+	return (str);
 }
