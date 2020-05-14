@@ -6,49 +6,56 @@
 /*   By: amarcele <amarcele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/11 16:20:04 by amarcele          #+#    #+#             */
-/*   Updated: 2020/05/11 20:18:11 by amarcele         ###   ########.fr       */
+/*   Updated: 2020/05/14 20:15:10 by amarcele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
-int	sch(int ch)
+char	*ravn(char *str1, int n,int nom)
 {
-	int y;
+	char *str;
 
-	y = 0;
-	while (ch)
+	str = ft_strdup(str1);
+	while (n)
 	{
-		y++;
-		ch = ch / 10;
+		str[nom--] = (n % 10) + '0';
+		n /= 10;
 	}
-	return (y);
+	return (str);
 }
 
 char				*ft_itoa(int num)
 {
-	int				i;
 	char			*str;
-	int				x;
-	unsigned int	z;
+	int				i;
+	int				ch;
 
-	x = 0;
-	z = num;
-	if ((i = num) <= 0)
-	{
-		x++;
-		z = -num;
-	}
-	x = x + sch(i);
-	str = ft_calloc(x + 1, sizeof(char));
-	if (z == 0)
-		str[0] = '0';
-	while (z)
-	{
-		str[--x] = (z % 10) + '0';
-		z = z / 10;
-	}
+	i = 0;
+	ch = num;
 	if (num < 0)
-		str[--x] = '-';
+		i++;
+	while (num)
+	{
+		i++;
+		num = num / 10;
+	}
+	str = malloc(i + 1);
+	if (str == NULL)
+		return (NULL);
+	str[i--] = '\0';
+	if (ch < 0)
+	{
+		str[0] = '-';
+		ch *= -1;
+	}
+	str = ravn(str, ch, i);
 	return (str);
+}
+
+int main(void)
+{
+  int x = -123;
+  printf("%s\n", ft_itoa(x));
 }

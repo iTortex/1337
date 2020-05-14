@@ -6,7 +6,7 @@
 /*   By: amarcele <amarcele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/08 15:55:23 by amarcele          #+#    #+#             */
-/*   Updated: 2020/05/08 16:39:17 by amarcele         ###   ########.fr       */
+/*   Updated: 2020/05/13 20:19:28 by amarcele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 int	ft_isalnum(int num)
 {
-	return (ft_isdigit(num) || ft_isalpha(num));
+	return (ft_isalpha(num) || ft_isdigit(num));
 }

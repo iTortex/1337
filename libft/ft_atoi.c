@@ -6,7 +6,7 @@
 /*   By: amarcele <amarcele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/30 12:13:17 by amarcele          #+#    #+#             */
-/*   Updated: 2020/05/08 18:45:33 by amarcele         ###   ########.fr       */
+/*   Updated: 2020/05/12 21:57:24 by amarcele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	ft_atoi(const char *str)
 {
 	int i;
 	int z;
-	int m;
+	unsigned int m;
 
 	i = 0;
 	z = 1;
