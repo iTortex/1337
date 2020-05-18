@@ -6,7 +6,7 @@
 #    By: amarcele <amarcele@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/05/12 20:59:21 by amarcele          #+#    #+#              #
-#    Updated: 2020/05/14 20:15:50 by amarcele         ###   ########.fr        #
+#    Updated: 2020/05/17 21:17:48 by amarcele         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,12 +16,13 @@ NAME = libft.a
 all: $(NAME)
 
 $(NAME):
-	gcc -c -Wall -Wextra -Werror $(SRC)
+	gcc -c -fPIC -Wall -Wextra -Werror $(SRC)
 	ar rc libft.a *.o
 	ranlib libft.a
 
 so: $(NAME)
-	gcc -L *.o  -shared -o libft.so -Wall -Wextra -Werror
+	gcc -L *.o -fPIC -shared -o libft.so -Wall -Wextra -Werror
+	
 clean:
 	/bin/rm -f *.o
 

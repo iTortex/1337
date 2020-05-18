@@ -6,7 +6,7 @@
 /*   By: amarcele <amarcele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/10 18:46:41 by amarcele          #+#    #+#             */
-/*   Updated: 2020/05/12 20:28:13 by amarcele         ###   ########.fr       */
+/*   Updated: 2020/05/17 19:29:08 by amarcele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char    *ft_strtrim(char const *s1, char const *set)
     int x;
     char *news;
 
+    if (!s1 || !set)
+        return (NULL);
     j = ft_strlen(s1) - 1;
     p = 0;
     x = 0;
@@ -45,5 +47,7 @@ char    *ft_strtrim(char const *s1, char const *set)
     }
     j -= x;
     news = ft_substr(s1, x ,j + 1);
+    if (!news)
+        return (NULL);
     return (news);
 }

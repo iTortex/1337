@@ -6,7 +6,7 @@
 /*   By: amarcele <amarcele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/10 17:54:19 by amarcele          #+#    #+#             */
-/*   Updated: 2020/05/11 20:02:04 by amarcele         ###   ########.fr       */
+/*   Updated: 2020/05/17 19:16:39 by amarcele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,11 @@ char		*ft_strjoin(char const *s1, char const *s2)
 {
 	int		i;
 	char	*str;
-
+	if (!s1 || !s2)
+		return (NULL);
 	i = ft_strlen(s1) + ft_strlen(s2);
 	str = ft_calloc(i, sizeof(char));
-	if (str == NULL)
+	if (!str)
 		return (NULL);
 	ft_strlcat(str, s1, i + 1);
 	ft_strlcat(str, s2, i + 1);

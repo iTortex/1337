@@ -1,30 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amarcele <amarcele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/05/02 21:05:36 by amarcele          #+#    #+#             */
-/*   Updated: 2020/05/17 15:08:09 by amarcele         ###   ########.fr       */
+/*   Created: 2020/05/17 17:08:44 by amarcele          #+#    #+#             */
+/*   Updated: 2020/05/17 21:30:58 by amarcele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+void	ft_putnbr_fd(int n, int fd)
 {
-	int i;
+	char ch;
+	unsigned int i;
 
-	if (!dst && !src)
-		return (0);
-	i = ft_strlen(src);
-	while (size > 1 && *src != '\0')
+	if (n < 0)
 	{
-		*dst++ = *src++;
-		size--;
+		n *= -1;
+		write(fd, "-", 1);
 	}
-	if (size != 0)
-		*dst = '\0';
-	return (i);
+	i = n;
+	if (i >= 10)
+	{
+		ft_putnbr_fd(i / 10, fd);
+		ch = (i % 10) + '0';
+		write(fd, &ch, 1);
+	}
+	if (i < 10)
+	{
+		ch = i + '0';
+		write(fd, &ch, 1);
+	}
 }

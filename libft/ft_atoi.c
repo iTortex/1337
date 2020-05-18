@@ -16,7 +16,7 @@ int	ft_atoi(const char *str)
 {
 	int i;
 	int z;
-	unsigned int m;
+	int m;
 
 	i = 0;
 	z = 1;
@@ -33,6 +33,8 @@ int	ft_atoi(const char *str)
 	{
 		m = (m * 10) + (str[i] - '0');
 		i++;
+		if (m < 0)
+			return (0);
 	}
 	return (m * z);
 }

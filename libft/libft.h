@@ -6,7 +6,7 @@
 /*   By: amarcele <amarcele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/01 13:34:09 by amarcele          #+#    #+#             */
-/*   Updated: 2020/05/14 14:30:44 by amarcele         ###   ########.fr       */
+/*   Updated: 2020/05/17 20:57:16 by amarcele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define __LIBFT_H__
 # include <string.h>
 # include <stdlib.h>
+# include <unistd.h>
 
 size_t	ft_strlen(const char *str);
 void	*ft_memset(void *s, int c, size_t n);
@@ -43,5 +44,9 @@ char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);
 char	*ft_itoa(int num);
 int	ft_atoi(const char *str);
+void	ft_putchar_fd(int c, int fd);
+void	ft_putstr_fd(char *s, int fd);
+void	ft_putendl_fd(char *s, int fd);
+void	ft_putnbr_fd(int n, int fd);
 
 #endif
