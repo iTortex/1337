@@ -34,7 +34,7 @@ int	ft_atoi(const char *str)
 		m = (m * 10) + (str[i] - '0');
 		i++;
 		if (m < 0)
-			return (0);
+			return (-1);
 	}
 	return (m * z);
 }
