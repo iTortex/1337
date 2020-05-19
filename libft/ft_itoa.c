@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amarcele <amarcele@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hgranule <wp3d3p@yandex.ru>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/11 16:20:04 by amarcele          #+#    #+#             */
-/*   Updated: 2020/05/17 23:25:49 by amarcele         ###   ########.fr       */
+/*   Updated: 2020/05/19 19:04:43 by hgranule         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ char				*ft_itoa(int num)
 	str = ft_calloc(i + 1, sizeof(char));
 	if (str == NULL)
 		return (NULL);
-	str[i--] = '\0';
+	str[i--] = '\0'; // лишнее, но не забудь убрать
 	pol = ch;
 	if (ch < 0)
 	{
@@ -59,4 +59,3 @@ char				*ft_itoa(int num)
 	str = ravn(str, pol, i);
 	return (str);
 }
-

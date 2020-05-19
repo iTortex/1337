@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amarcele <amarcele@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hgranule <wp3d3p@yandex.ru>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/10 17:54:19 by amarcele          #+#    #+#             */
-/*   Updated: 2020/05/17 19:16:39 by amarcele         ###   ########.fr       */
+/*   Updated: 2020/05/19 19:40:11 by hgranule         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@ char		*ft_strjoin(char const *s1, char const *s2)
 {
 	int		i;
 	char	*str;
-	if (!s1 || !s2)
+
+	if (!s1 || !s2) // я бы убрал защиту
 		return (NULL);
 	i = ft_strlen(s1) + ft_strlen(s2);
 	str = ft_calloc(i, sizeof(char));

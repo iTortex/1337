@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amarcele <amarcele@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hgranule <wp3d3p@yandex.ru>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/01 20:57:21 by amarcele          #+#    #+#             */
-/*   Updated: 2020/05/05 16:47:13 by amarcele         ###   ########.fr       */
+/*   Updated: 2020/05/19 19:07:33 by hgranule         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	*ft_memchr(const void *arr, int c, size_t n)
 {
 	unsigned char *a;
-	unsigned char co;
+	unsigned char co; // const
 
 	a = (unsigned char *)arr;
 	co = (unsigned char)c;

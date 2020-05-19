@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amarcele <amarcele@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hgranule <wp3d3p@yandex.ru>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/02 21:05:36 by amarcele          #+#    #+#             */
-/*   Updated: 2020/05/17 15:08:09 by amarcele         ###   ########.fr       */
+/*   Updated: 2020/05/19 19:44:00 by hgranule         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
 	int i;
 
-	if (!dst && !src)
+	if (!dst && !src) // подумой
 		return (0);
 	i = ft_strlen(src);
 	while (size > 1 && *src != '\0')

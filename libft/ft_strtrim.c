@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amarcele <amarcele@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hgranule <wp3d3p@yandex.ru>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/10 18:46:41 by amarcele          #+#    #+#             */
-/*   Updated: 2020/05/17 19:29:08 by amarcele         ###   ########.fr       */
+/*   Updated: 2020/05/19 21:07:50 by hgranule         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ char    *ft_strtrim(char const *s1, char const *set)
     int j;
     int p;
     int x;
-    char *news;
 
     if (!s1 || !set)
         return (NULL);
@@ -46,8 +45,5 @@ char    *ft_strtrim(char const *s1, char const *set)
         }
     }
     j -= x;
-    news = ft_substr(s1, x ,j + 1);
-    if (!news)
-        return (NULL);
-    return (news);
+    return (ft_substr(s1, x ,j + 1));
 }

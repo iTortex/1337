@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amarcele <amarcele@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hgranule <wp3d3p@yandex.ru>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/08 18:58:02 by amarcele          #+#    #+#             */
-/*   Updated: 2020/05/13 22:06:49 by amarcele         ###   ########.fr       */
+/*   Updated: 2020/05/19 18:51:24 by hgranule         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	char *mem;
 
 	if (nmemb == 0 || size == 0)
-		{
-			nmemb = 1;
-			size = 1;
-		}
+	{
+		nmemb = 1;
+		size = 1;
+	}
 	mem = malloc(size * nmemb);
 	if (mem == NULL)
 		return (NULL);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memccpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amarcele <amarcele@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hgranule <wp3d3p@yandex.ru>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/02 13:34:15 by amarcele          #+#    #+#             */
-/*   Updated: 2020/05/13 20:40:14 by amarcele         ###   ########.fr       */
+/*   Updated: 2020/05/19 19:07:36 by hgranule         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	*ft_memccpy(void *dest, const void *src, int c, size_t len)
 {
 	unsigned char *st;
 	const unsigned char *rc;
-	unsigned char stop;
+	unsigned char stop; // const
 
 	stop = (unsigned char)c;
 	st = (unsigned char *)dest;

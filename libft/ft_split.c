@@ -3,14 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amarcele <amarcele@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hgranule <wp3d3p@yandex.ru>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/17 23:33:24 by amarcele          #+#    #+#             */
-/*   Updated: 2020/05/19 15:23:04 by amarcele         ###   ########.fr       */
+/*   Updated: 2020/05/19 19:42:29 by hgranule         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+// переписатьс
 
 static void letsfree(char **str)
 {
@@ -51,10 +53,10 @@ static char	**napoln(char **rez, char const *s3, char c3)
 					return (rez);
 			}
 		}
-	while(s3[i] == c3)
-		i++;
-	if (s3[i] == '\0')
-		return (rez);
+		while(s3[i] == c3)
+			i++;
+		if (s3[i] == '\0')
+			return (rez);
 	}
 	return(rez);
 }
@@ -83,7 +85,7 @@ char **ft_split(char const *s, char c)
 {
 	char **str;
 	int i;
-	
+
 	i = 0;
 	if (!s)
 		return (NULL);

@@ -12,6 +12,12 @@
 
 #include "libft.h"
 
+/*
+	Названия переменных
+	Переполнение бывает с возвратом 0 и -1
+	isdigit и больше вспомогательных функций аля isspace
+*/
+
 int	ft_atoi(const char *str)
 {
 	int i;

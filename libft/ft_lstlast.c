@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amarcele <amarcele@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hgranule <wp3d3p@yandex.ru>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/18 21:45:46 by amarcele          #+#    #+#             */
-/*   Updated: 2020/05/19 17:12:36 by amarcele         ###   ########.fr       */
+/*   Updated: 2020/05/19 21:35:05 by hgranule         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,9 @@
 
 t_list	*ft_lstlast(t_list *lst)
 {
-	int i;
-
 	if (!lst)
 		return (NULL);
-	i = ft_lstsize(lst);
-	while(i)
-	{
+	while (lst->next)
 		lst = lst->next;
-		i--;
-	}
-	return(lst);
+	return (lst);
 }

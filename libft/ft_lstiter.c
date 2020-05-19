@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amarcele <amarcele@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hgranule <wp3d3p@yandex.ru>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/19 17:20:45 by amarcele          #+#    #+#             */
-/*   Updated: 2020/05/19 17:25:18 by amarcele         ###   ########.fr       */
+/*   Updated: 2020/05/19 21:32:46 by hgranule         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,9 @@ void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
 	if (!lst)
 		return;
-	while(lst->next != NULL)
+	while (lst != NULL)
 	{
 		(*f)(lst->content);
 		lst = lst->next;
 	}
-	(*f)(lst->content);
 }

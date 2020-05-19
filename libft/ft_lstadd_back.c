@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amarcele <amarcele@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hgranule <wp3d3p@yandex.ru>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/18 21:51:24 by amarcele          #+#    #+#             */
-/*   Updated: 2020/05/19 16:43:42 by amarcele         ###   ########.fr       */
+/*   Updated: 2020/05/19 21:21:46 by hgranule         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,15 @@
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	int i;
 	t_list *elm;
 
-	elm = *lst;
-	i = ft_lstsize(*lst);
-	while(i)
+	if (*lst)
 	{
-		elm = elm->next;
-		i--;
+		elm = *lst;
+		while(elm->next)
+			elm = elm->next;
+		elm->next = new;
 	}
-	elm->next = new;
+	else
+		*lst = new;
 }
