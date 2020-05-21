@@ -3,23 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hgranule <wp3d3p@yandex.ru>                +#+  +:+       +#+        */
+/*   By: amarcele <amarcele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/17 23:33:24 by amarcele          #+#    #+#             */
-/*   Updated: 2020/05/19 19:42:29 by hgranule         ###   ########.fr       */
+/*   Updated: 2020/05/21 16:16:58 by amarcele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-// переписатьс
-
-static void letsfree(char **str)
+static void		letsfree(char **str)
 {
-	int i;
+	int			i;
 
 	i = 0;
-	while(str)
+	while (str)
 	{
 		free(str[i]);
 		i++;
@@ -27,64 +25,60 @@ static void letsfree(char **str)
 	free(str);
 }
 
-static char	**napoln(char **rez, char const *s3, char c3)
+static char		**napoln(char **rez, char const *s3, char c3)
 {
-	int i;
-	int j;
-	int p;
+	int			i;
+	int			j;
+	int			p;
 
 	i = 0;
 	j = 0;
 	p = 0;
-	while(s3)
+	while (s3)
 	{
-		while(s3[i] != c3)
+		while (s3[i++] != c3)
 		{
-			i++;
 			j++;
-			if (s3[i] == c3 || s3[i] == '\0')
-			{
-				rez[p] = ft_substr(s3, i - j, j);
-				if (!rez)
-					letsfree(rez);
-				j = 0;
-				p++;
-				if (s3[i] == '\0')
-					return (rez);
-			}
+			if (s3[i] != c3 && s3[i] != '\0')
+				continue;
+			rez[p++] = ft_substr(s3, i - j, j);
+			if (!rez)
+				letsfree(rez);
+			j = 0;
+			if (s3[i] == '\0')
+				return (rez);
 		}
-		while(s3[i] == c3)
+		while (s3[i] == c3)
 			i++;
-		if (s3[i] == '\0')
-			return (rez);
 	}
-	return(rez);
+	return (rez);
 }
 
-static int memory(char const *s2, char c2, int j)
+static int		memory(char const *s2, char c2, int j)
 {
-	int num;
+	int			num;
 
 	num = 0;
-	while(s2)
+	while (s2)
 	{
-		while(s2[num] != c2 && s2[num] != '\0')
+		while (s2[num] != c2 && s2[num] != '\0')
 		{
 			num++;
-			if(s2[num] == c2 || s2[num] != '\0')
+			if (s2[num] == c2 || s2[num] != '\0')
 				j++;
 		}
-		while(s2[num] == c2)
+		while (s2[num] == c2)
 			num++;
 		if (s2[num] == '\0')
 			return (j);
 	}
 	return (j);
 }
-char **ft_split(char const *s, char c)
+
+char			**ft_split(char const *s, char c)
 {
-	char **str;
-	int i;
+	char		**str;
+	int			i;
 
 	i = 0;
 	if (!s)
@@ -92,7 +86,7 @@ char **ft_split(char const *s, char c)
 	i = memory(s, c, i);
 	str = ft_calloc(i + 1, sizeof(char*));
 	if (!str)
-		return(NULL);
+		return (NULL);
 	str = napoln(str, s, c);
 	if (!str)
 		return (NULL);

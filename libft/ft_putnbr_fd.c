@@ -6,16 +6,16 @@
 /*   By: amarcele <amarcele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/17 17:08:44 by amarcele          #+#    #+#             */
-/*   Updated: 2020/05/17 21:30:58 by amarcele         ###   ########.fr       */
+/*   Updated: 2020/05/20 17:02:24 by amarcele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr_fd(int n, int fd)
+void				ft_putnbr_fd(int n, int fd)
 {
-	char ch;
-	unsigned int i;
+	char			ch;
+	unsigned int	i;
 
 	if (n < 0)
 	{

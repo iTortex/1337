@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hgranule <wp3d3p@yandex.ru>                +#+  +:+       +#+        */
+/*   By: amarcele <amarcele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/18 21:51:24 by amarcele          #+#    #+#             */
-/*   Updated: 2020/05/19 21:21:46 by hgranule         ###   ########.fr       */
+/*   Updated: 2020/05/20 16:53:26 by amarcele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	if (*lst)
 	{
 		elm = *lst;
-		while(elm->next)
+		while (elm->next)
 			elm = elm->next;
 		elm->next = new;
 	}

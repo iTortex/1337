@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hgranule <wp3d3p@yandex.ru>                +#+  +:+       +#+        */
+/*   By: amarcele <amarcele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/08 17:24:40 by amarcele          #+#    #+#             */
-/*   Updated: 2020/05/19 19:37:55 by hgranule         ###   ########.fr       */
+/*   Updated: 2020/05/20 17:26:59 by amarcele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,9 @@
 char		*ft_strdup(const char *s)
 {
 	char *const	copy = (char *const)malloc(ft_strlen(s) + 1);
-	int			i;
 
-	i = 0;
 	if (copy == NULL)
 		return (NULL);
-	while (s[i]) // strlcpy
-	{
-		copy[i] = s[i];
-		i++;
-	}
-	copy[i] = '\0';
+	ft_strlcpy(copy, s, ft_strlen(s) + 1);
 	return (copy);
 }

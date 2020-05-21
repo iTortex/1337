@@ -5,24 +5,18 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: amarcele <amarcele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/04/30 12:13:17 by amarcele          #+#    #+#             */
-/*   Updated: 2020/05/12 21:57:24 by amarcele         ###   ########.fr       */
+/*   Created: 2020/05/21 16:06:07 by amarcele          #+#    #+#             */
+/*   Updated: 2020/05/21 16:06:53 by amarcele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*
-	Названия переменных
-	Переполнение бывает с возвратом 0 и -1
-	isdigit и больше вспомогательных функций аля isspace
-*/
-
 int	ft_atoi(const char *str)
 {
-	int i;
-	int z;
-	int m;
+	int			i;
+	int			z;
+	long int	m;
 
 	i = 0;
 	z = 1;

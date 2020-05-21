@@ -3,25 +3,35 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hgranule <wp3d3p@yandex.ru>                +#+  +:+       +#+        */
+/*   By: amarcele <amarcele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/11 16:20:04 by amarcele          #+#    #+#             */
-/*   Updated: 2020/05/19 19:04:43 by hgranule         ###   ########.fr       */
+/*   Updated: 2020/05/21 16:07:34 by amarcele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ravn(char *str1, int n,int nom)
+static int			schet(int del, int ch)
 {
-	unsigned int ch2;
+	while (del)
+	{
+		ch++;
+		del /= 10;
+	}
+	return (ch);
+}
+
+static char			*ravn(char *str1, int n, int nom)
+{
+	unsigned int	ch2;
 
 	ch2 = n;
 	if (ch2 == 0)
-		{
-			str1[nom--] = ch2 + '0';
-			return (str1);
-		}
+	{
+		str1[nom--] = ch2 + '0';
+		return (str1);
+	}
 	while (ch2)
 	{
 		str1[nom--] = (ch2 % 10) + '0';
@@ -34,22 +44,18 @@ char				*ft_itoa(int num)
 {
 	char			*str;
 	int				i;
-	int	ch;
-	unsigned int pol;
+	int				ch;
+	unsigned int	pol;
 
 	i = 0;
 	ch = num;
 	if (num <= 0)
 		i++;
-	while (num)
-	{
-		i++;
-		num = num / 10;
-	}
+	i += schet(num, 0);
 	str = ft_calloc(i + 1, sizeof(char));
 	if (str == NULL)
 		return (NULL);
-	str[i--] = '\0'; // лишнее, но не забудь убрать
+	str[i--] = '\0';
 	pol = ch;
 	if (ch < 0)
 	{

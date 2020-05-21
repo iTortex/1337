@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hgranule <wp3d3p@yandex.ru>                +#+  +:+       +#+        */
+/*   By: amarcele <amarcele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/18 17:40:14 by amarcele          #+#    #+#             */
-/*   Updated: 2020/05/19 19:48:52 by hgranule         ###   ########.fr       */
+/*   Updated: 2020/05/20 17:28:10 by amarcele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,18 @@
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	char *str;
-	int i;
+	char	*str;
+	int		i;
 
-	i = 0;
-	if (!s) // убрать защить
+	if (!s)
 		return (NULL);
+	i = 0;
 	str = ft_calloc(ft_strlen(s) + 1, sizeof(char));
 	if (!str)
 		return (NULL);
 	while (s[i] != '\0')
 	{
-		str[i] = f(i,s[i]);
+		str[i] = f(i, s[i]);
 		i++;
 	}
 	return (str);

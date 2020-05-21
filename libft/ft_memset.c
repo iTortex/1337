@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hgranule <wp3d3p@yandex.ru>                +#+  +:+       +#+        */
+/*   By: amarcele <amarcele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/01 14:24:00 by amarcele          #+#    #+#             */
-/*   Updated: 2020/05/19 19:22:28 by hgranule         ###   ########.fr       */
+/*   Updated: 2020/05/21 19:39:59 by amarcele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 void	*ft_memset(void *s, int c, size_t n)
 {
-	int i;
+	int				i;
 
 	i = 0;
 	while (n != 0)
 	{
-		((unsigned char *)s)[i] = c; // новуую переменную, не надо каставания
+		((unsigned char *)s)[i] = c;
 		i++;
 		n--;
 	}

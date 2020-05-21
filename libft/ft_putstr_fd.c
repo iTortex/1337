@@ -6,7 +6,7 @@
 /*   By: amarcele <amarcele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/17 16:19:12 by amarcele          #+#    #+#             */
-/*   Updated: 2020/05/18 17:38:52 by amarcele         ###   ########.fr       */
+/*   Updated: 2020/05/20 16:56:15 by amarcele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	if(!s)
-		return;
+	if (!s)
+		return ;
 	write(fd, s, ft_strlen(s));
 }
