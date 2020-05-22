@@ -6,7 +6,7 @@
 /*   By: amarcele <amarcele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/01 13:34:09 by amarcele          #+#    #+#             */
-/*   Updated: 2020/05/23 00:46:38 by amarcele         ###   ########.fr       */
+/*   Updated: 2020/05/23 01:02:55 by amarcele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ t_list			*ft_lstnew(void	*content);
 t_list			*ft_lstlast(t_list *lst);
 void			ft_lstadd_front(t_list **lst, t_list *new);
 void			ft_lstadd_back(t_list **lst, t_list *new);
-t_list			*ft_lstmap(t_list *lst, void *(*f)(void *)/
+t_list			*ft_lstmap(t_list *lst, void *(*f)(void *)
 void (*del)(void *));
 char			*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void			ft_lstiter(t_list *lst, void (*f)(void *));
