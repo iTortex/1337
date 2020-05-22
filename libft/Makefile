@@ -4,13 +4,10 @@ NAME = libft.a
 all: $(NAME)
 
 $(NAME):
-	gcc -c -fPIC -Wall -Wextra -Werror $(SRC)
+	gcc -c -Wall -Wextra -Werror $(SRC)
 	ar rc libft.a *.o
 	ranlib libft.a
 
-so: $(NAME)
-	gcc -L *.o -fPIC -shared -o libft.so -Wall -Wextra -Werror
-	
 clean:
 	/bin/rm -f *.o
 

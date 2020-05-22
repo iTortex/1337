@@ -6,7 +6,7 @@
 /*   By: amarcele <amarcele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/18 21:41:45 by amarcele          #+#    #+#             */
-/*   Updated: 2020/05/20 16:55:53 by amarcele         ###   ########.fr       */
+/*   Updated: 2020/05/22 00:58:44 by amarcele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_lstsize(t_list *lst)
 	int i;
 
 	i = 0;
-	while (lst->next != NULL)
+	while (lst != NULL)
 	{
 		i++;
 		lst = lst->next;
