@@ -6,7 +6,7 @@
 /*   By: amarcele <amarcele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/17 23:33:24 by amarcele          #+#    #+#             */
-/*   Updated: 2020/05/23 00:29:22 by amarcele         ###   ########.fr       */
+/*   Updated: 2020/05/23 00:58:41 by amarcele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ static char		**napoln(char **rez, char const *s3, char c3)
 	i = 0;
 	j = 0;
 	p = 0;
-	while (s3)
+	while (s3[i])
 	{
 		while (s3[i++] != c3)
 		{
@@ -85,8 +85,6 @@ char			**ft_split(char const *s, char c)
 	i = 0;
 	if (!s)
 		return (NULL);
-	if (ft_strrchr(s, c) == NULL && s[0] != '\0')
-		i = 1;
 	i = memory(s, c, i);
 	str = ft_calloc(i + 1, sizeof(char**));
 	if (!str)
