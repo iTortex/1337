@@ -6,7 +6,7 @@
 /*   By: amarcele <amarcele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/17 23:33:24 by amarcele          #+#    #+#             */
-/*   Updated: 2020/05/22 00:35:27 by amarcele         ###   ########.fr       */
+/*   Updated: 2020/05/22 19:13:30 by amarcele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ char			**ft_split(char const *s, char c)
 	if (!s)
 		return (NULL);
 	i = memory(s, c, i);
-	str = ft_calloc(i + 1, sizeof(char*));
+	str = ft_calloc(i + 1, sizeof(char**));
 	if (!str)
 		return (NULL);
 	str = napoln(str, s, c);
