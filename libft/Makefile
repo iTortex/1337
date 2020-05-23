@@ -17,7 +17,7 @@ $(NAME):
 	ranlib libft.a
 
 clean:
-	/bin/rm -f *.o
+	/bin/rm -f $(OBJ) $(OBJ_BONUS)
 
 fclean: clean
 	/bin/rm -f libft.a
