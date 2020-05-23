@@ -6,16 +6,17 @@ NAME = libft.a
 
 all: $(NAME)
 
-bonus: all
-	gcc -c -Wall -Wextra -Werror $(SRC) $(SRC_BONUS)
-	ar rc libft.a $(OBJ) $(OBJ_BONUS)
-	ranlib libft.a
-
-$(NAME):
-	gcc -c -Wall -Wextra -Werror $(SRC)
+$(NAME): $(OBJ)
 	ar rc libft.a $(OBJ)
 	ranlib libft.a
 
+%.o: %.c
+	gcc -Wall -Wextra -Werror -o $@ -c $<
+
+bonus: $(OBJ) $(OBJ_BONUS)
+	ar rc libft.a $(OBJ) $(OBJ_BONUS)
+	ranlib libft.a
+	
 clean:
 	/bin/rm -f $(OBJ) $(OBJ_BONUS)
 
@@ -23,3 +24,5 @@ fclean: clean
 	/bin/rm -f libft.a
 
 re: fclean all
+
+.PHONY: all clean fclean re bonus
