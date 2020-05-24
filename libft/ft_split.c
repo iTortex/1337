@@ -6,7 +6,7 @@
 /*   By: amarcele <amarcele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/17 23:33:24 by amarcele          #+#    #+#             */
-/*   Updated: 2020/05/23 00:58:41 by amarcele         ###   ########.fr       */
+/*   Updated: 2020/05/24 21:54:12 by amarcele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ static int		memory(char const *s2, char c2, int j)
 	int			num;
 
 	num = 0;
-	while (s2)
+	while (s2[num])
 	{
 		while (s2[num] != c2 && s2[num] != '\0')
 		{

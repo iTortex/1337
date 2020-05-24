@@ -6,7 +6,7 @@
 /*   By: amarcele <amarcele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/03 16:04:44 by amarcele          #+#    #+#             */
-/*   Updated: 2020/05/23 16:22:14 by amarcele         ###   ########.fr       */
+/*   Updated: 2020/05/24 21:55:09 by amarcele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,28 +15,25 @@
 char	*ft_strnstr(const char *d, const char *l, size_t len)
 {
 	int i;
-	int n;
 	int j;
 
 	i = 0;
 	j = 0;
+	if (!d[i])
+		return (NULL);
 	if (*l == '\0')
 		return ((char *)d);
 	while (d[i] != l[0] && len--)
 		i++;
 	if (d[i] == l[0] && len != 0)
 	{
-		n = i;
 		while (d[i++] == l[j++] && len-- && l[j] != '\0')
 		{
 			if (d[i] != l[j])
-			{
 				j = 0;
-				n = i;
-			}
 		}
 		if (l[j] == '\0')
-			return (&((char *)d)[n]);
+			return (&((char *)d)[i - strlen(l)]);
 	}
 	return (NULL);
 }
