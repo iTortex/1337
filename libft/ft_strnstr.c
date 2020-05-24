@@ -6,7 +6,7 @@
 /*   By: amarcele <amarcele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/03 16:04:44 by amarcele          #+#    #+#             */
-/*   Updated: 2020/05/24 22:56:29 by amarcele         ###   ########.fr       */
+/*   Updated: 2020/05/24 22:59:55 by amarcele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ char	*ft_strnstr(const char *d, const char *l, size_t len)
 				j = 0;
 		}
 		if (l[j] == '\0')
-			return (&((char *)d)[i - strlen(l)]);
+			return (&((char *)d)[i - ft_strlen(l)]);
 	}
 	return (NULL);
 }
