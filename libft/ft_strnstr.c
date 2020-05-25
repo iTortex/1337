@@ -6,35 +6,25 @@
 /*   By: amarcele <amarcele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/03 16:04:44 by amarcele          #+#    #+#             */
-/*   Updated: 2020/05/25 01:00:50 by amarcele         ###   ########.fr       */
+/*   Updated: 2020/05/25 23:18:52 by amarcele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *d, const char *l, size_t len)
+char	*ft_strnstr(const char *s1, const char *s2, size_t s)
 {
-	int i;
-	int j;
+	size_t len;
 
-	i = 0;
-	j = 0;
-	if (*l == '\0')
-		return ((char *)d);
-	while (d[i] != l[0] && len-- && d[i] != '\0')
-		i++;
-	if (d[i] == l[0] && len != 0)
+	len = ft_strlen(s2);
+	if (s2[0] == '\0')
+		return ((char *)s1);
+	while (*s1 != '\0' && len <= s)
 	{
-		while (d[i++] == l[j++] && len-- && l[j] != '\0' && d[i] != '\0')
-		{
-			while(d[i] != l[j])
-			{
-				i++;
-				j = 0;
-			}
-		}
-		if (l[j] == '\0')
-			return (&((char *)d)[i - ft_strlen(l)]);
+		s--;
+		if (*s1 == *s2 && !ft_strncmp(s1, s2, len))
+			return ((char *)s1);
+		s1++;
 	}
 	return (NULL);
 }
