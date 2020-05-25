@@ -6,11 +6,12 @@
 /*   By: amarcele <amarcele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/17 23:33:24 by amarcele          #+#    #+#             */
-/*   Updated: 2020/05/24 21:54:12 by amarcele         ###   ########.fr       */
+/*   Updated: 2020/05/25 19:10:45 by amarcele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 static void		letsfree(char **str)
 {
@@ -45,7 +46,7 @@ static char		**napoln(char **rez, char const *s3, char c3)
 			if (!rez)
 				letsfree(rez);
 			j = 0;
-			while (s3[i] == c3)
+			while (s3[i] == c3 && s3[i] != '\0')
 				i++;
 			if (s3[i] == '\0')
 				return (rez);
@@ -69,7 +70,7 @@ static int		memory(char const *s2, char c2, int j)
 			if (s2[num - 1] != c2 && s2[num] == '\0')
 				j++;
 		}
-		while (s2[num] == c2)
+		while (s2[num] == c2 && s2[num] != '\0')
 			num++;
 		if (s2[num] == '\0')
 			return (j);
@@ -93,4 +94,10 @@ char			**ft_split(char const *s, char c)
 	if (!str)
 		return (NULL);
 	return (str);
+}
+
+int main(void)
+{
+	printf("%s\n",*ft_split("",' '));
+	return 0;
 }
