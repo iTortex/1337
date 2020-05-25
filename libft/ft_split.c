@@ -6,12 +6,11 @@
 /*   By: amarcele <amarcele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/17 23:33:24 by amarcele          #+#    #+#             */
-/*   Updated: 2020/05/25 19:10:45 by amarcele         ###   ########.fr       */
+/*   Updated: 2020/05/25 19:15:55 by amarcele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 static void		letsfree(char **str)
 {
@@ -94,10 +93,4 @@ char			**ft_split(char const *s, char c)
 	if (!str)
 		return (NULL);
 	return (str);
-}
-
-int main(void)
-{
-	printf("%s\n",*ft_split("",' '));
-	return 0;
 }
